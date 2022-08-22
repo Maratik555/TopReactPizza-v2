@@ -1,0 +1,11 @@
+.footer {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+  margin: 0 15px 0 15px;
+  transition: color, transform 500ms ease;
+}
+
+.footer:hover {
+  transform: scale(1.5);
+  color: #fe5f1e;
+}
