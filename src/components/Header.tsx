@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import logoSvg from '../assets/img/pizza-logo.svg'
 import {Link, useLocation} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import Search from './Search'
+import SignIn from './SignIn'
 import {selectCart} from '../redux/cart/selectors'
 
 export function Header() {
@@ -10,6 +11,8 @@ export function Header() {
   const location = useLocation()
   
   const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0)
+  const [modal,setModal] = useState(true)
+
 
   return (
     <div className="header">
@@ -24,7 +27,8 @@ export function Header() {
           </div>
         </Link>
         {location.pathname !== '/cart' && <Search />}
-        <button title="Войти" className="button button--cart">Sign In</button>
+        <button onClick={() => setModal(true)} title="Войти" className="button button--cart">Войти</button>
+        <SignIn active={modal} setActive={setModal}/>
         <div className="header__cart">
           {location.pathname !== '/cart' && (
             <Link title='Корзина' to="/cart" className="button button--cart">

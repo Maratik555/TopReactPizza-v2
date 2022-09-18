@@ -33,7 +33,6 @@ export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price
 	
 	
 	const onShow = ({...item}) => {
-
 		// @ts-ignore
 		setFullItem(fullItem = item)
 		setShow(prev => !prev)
