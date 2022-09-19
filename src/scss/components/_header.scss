@@ -1,7 +1,7 @@
 @import '../variables';
 
 .header {
-  //border-bottom: 1px solid $gray-line;
+  border-bottom: 1px solid $gray-line;
   padding: 20px 0;
 
   .container {
@@ -11,7 +11,7 @@
     position:fixed;
     z-index: 101;
     top: 0;
-    padding-right: 100px;
+    padding-right: 33px;
     padding-bottom: 10px;
     padding-top: 10px;
     background: #ffdf8c;
@@ -49,7 +49,7 @@
     }
 
     p {
-      margin-left: 10px;
+      margin-left: 20px;
       color: #565353;
     }
   }

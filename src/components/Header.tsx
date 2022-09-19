@@ -11,7 +11,17 @@ export function Header() {
   const location = useLocation()
   
   const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0)
-  const [modal,setModal] = useState(true)
+  const [modal, setModal] = useState(false)
+  const [user, setUser] = useState('')
+
+  function userS() {
+    setModal(true)
+  }
+
+  function userO() {
+    alert('Вы вышли...')
+    setUser('')
+  }
 
 
   return (
@@ -27,8 +37,11 @@ export function Header() {
           </div>
         </Link>
         {location.pathname !== '/cart' && <Search />}
-        <button onClick={() => setModal(true)} title="Войти" className="button button--cart">Войти</button>
-        <SignIn active={modal} setActive={setModal}/>
+        {!user && <button onClick={userS} title="Войти">Войти</button>}
+
+        {user && <button onClick={userO} title="Выйти">Выйти</button>}
+        <span style={{fontWeight: 600, fontSize: 17}}>{user}</span>
+        <SignIn active={modal} setActive={setModal} setUser={setUser}/>
         <div className="header__cart">
           {location.pathname !== '/cart' && (
             <Link title='Корзина' to="/cart" className="button button--cart">
