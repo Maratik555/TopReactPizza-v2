@@ -19,7 +19,6 @@ const Cart: FC = () => {
 		}
 	}
 	
-	
 	if (!totalPrice) {
 		return <CartEmpty/>
 	}

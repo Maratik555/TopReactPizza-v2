@@ -11,10 +11,9 @@
   height: 35px;
   border-radius: 10px;
   font-size: 17px;
-
-  &:focus {
-    border: 1px solid rgba(0, 0, 0, 0.5);
-  }
+}
+.input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .icon {
@@ -34,8 +33,9 @@
   right: 15px;
   top: 12px;
   cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-  }
 }
+.clearIcon:hover {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=Search.module.css.map */

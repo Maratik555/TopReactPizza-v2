@@ -23,9 +23,7 @@ export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, count
         } as CartItemType))
     }
 
-    const onClickMinus = () => {
-        dispatch(minusItem(id))
-    }
+    const onClickMinus = () => dispatch(minusItem(id))
 
     const onClickRemove = () => {
         if (window.confirm('Ты действительно хочешь удалить товар?')) {
@@ -48,7 +46,8 @@ export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, count
                 <button
                     disabled={count === 1}
                     onClick={onClickMinus}
-                    className="button button--outline button--circle cart__item-count-minus">
+                    className="button button--outline button--circle cart__item-count-minus"
+                >
                     <svg
                         width="10"
                         height="10"
