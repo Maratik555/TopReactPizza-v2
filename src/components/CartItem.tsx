@@ -4,24 +4,23 @@ import {addItem, minusItem, removeItem} from '../redux/cart/cartSlice'
 
 import {CartItem as CartItemType} from '../redux/cart/types'
 
+
 export type CartItemProps = {
     id: string
     title: string
     type: string
     size: number
     price: number
+    price1: number
+    price2: number
     count: number
     imageUrl: string
 }
 
-export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, count, imageUrl}) => {
+export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, price1, price2, count, imageUrl}) => {
     const dispatch = useDispatch()
 
-    const onClickPlus = () => {
-        dispatch(addItem({
-            id,
-        } as CartItemType))
-    }
+    const onClickPlus = () => dispatch(addItem({id, size, type} as CartItemType))
 
     const onClickMinus = () => dispatch(minusItem(id))
 
@@ -38,9 +37,7 @@ export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, count
             </div>
             <div className="cart__item-info">
                 <h3>{title}</h3>
-                <p>
-                    {type}, {size} см.
-                </p>
+                <p>{type}, {size} см.</p>
             </div>
             <div className="cart__item-count">
                 <button
@@ -82,7 +79,7 @@ export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, count
                 </button>
             </div>
             <div className="cart__item-price">
-                <b>{price * count} ₽</b>
+                <b>{size === 26 ? price * count : size === 30 ? price1 * count : price2 * count} ₽</b>
             </div>
             <div className="cart__item-remove">
                 <div onClick={onClickRemove} className="button button--outline button--circle">

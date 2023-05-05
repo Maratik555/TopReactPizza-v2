@@ -3,6 +3,8 @@ export type Pizza = {
     title: string;
     info: string;
     price: number;
+    price1: number;
+    price2: number;
     imageUrl: string;
     sizes: number[];
     types: number[];

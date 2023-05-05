@@ -13,12 +13,13 @@ interface PizzaBlockProps {
 	info: string
 	imageUrl: string
 	price: number
+	price1: number
+	price2: number
 	types: number[]
 	sizes: number[]
 }
 
-
-export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price, types, sizes}) => {
+export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price, price1, price2, types, sizes}) => {
 	
 	
 	const dispatch = useDispatch()
@@ -27,11 +28,9 @@ export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price
 	const [activeSize, setActiveSize] = React.useState(0)
 	let [show, setShow] = React.useState(false)
 	let [fullItem, setFullItem] = React.useState({imageUrl, title, price, info})
-	
-	// @ts-ignore
+
 	const addedCount = cartItem ? cartItem.count : 0
-	
-	
+
 	const onShow = ({...item}) => {
 		// @ts-ignore
 		setFullItem(fullItem = item)
@@ -46,6 +45,8 @@ export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price
 			info,
 			title,
 			price,
+			price1,
+			price2,
 			imageUrl,
 			type: typeNames[activeType],
 			size: sizes[activeSize],
@@ -53,7 +54,8 @@ export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price
 		}
 		dispatch(addItem(item))
 	}
-	
+
+
 	return (
 		<div className="pizza-block-wrapper">
 			<div className="pizza-block">
@@ -77,14 +79,15 @@ export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price
 					<ul>
 						{sizes.map((size, i) => (
 							<li onClick={() => setActiveSize(i)} key={size}
-							    className={activeSize === i ? 'active' : ''}>
-								{size} см.
+							    className={activeSize === i ? 'active' : ''}
+							>
+							{size} см.
 							</li>
 						))}
 					</ul>
 				</div>
 				<div className="pizza-block__bottom">
-					<div className="pizza-block__price"> от {price} ₽</div>
+						<div className="pizza-block__price">{activeSize === 0 ? ` ${price} ₽` : activeSize === 1 ? ` ${price1} ₽` : ` ${price2} ₽`}</div>
 					{addedCount > 0 ? <>
 						<button className="button button--outline button--circle cart__item-count-minus" onClick={cartMinus}
 						>

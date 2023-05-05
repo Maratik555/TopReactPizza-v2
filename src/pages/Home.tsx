@@ -83,7 +83,7 @@ const Home = () => {
         isMounted.current = true
     }, [])
 
-    const pizzas = items.map((obj: any) => <PizzaBlock key={obj.id} {...obj} />)
+    const pizzas = items.map(obj => <PizzaBlock key={obj.id} {...obj} />)
     const skeletons = [...new Array(6)].map((_, index) => <LoadingBlock key={index}/>)
 
     return (

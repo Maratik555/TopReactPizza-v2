@@ -47,7 +47,7 @@ export const Sort: FC<SortPopupProps> = memo(({value}) => {
         document.body.addEventListener('click', handleClickOutside)
 
         return () => document.body.removeEventListener('click', handleClickOutside)
-    }, [])
+    }, [sortRef])
 
     return (
         <div ref={sortRef} className="sort">
