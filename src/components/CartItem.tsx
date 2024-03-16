@@ -11,13 +11,11 @@ export type CartItemProps = {
     type: string
     size: number
     price: number
-    price1: number
-    price2: number
     count: number
     imageUrl: string
 }
 
-export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, price1, price2, count, imageUrl}) => {
+export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, count, imageUrl}) => {
     const dispatch = useDispatch()
 
     const onClickPlus = () => dispatch(addItem({id, size, type} as CartItemType))
