@@ -14,8 +14,14 @@ const ShowPopup = ({pizza, onShow}: PropsType) => {
 				<IoCloseCircleOutline className="close-popup" onClick={() => onShow(pizza)}/>
 				<img src={pizza.imageUrl}  alt='pizza'/>
 				<h2>{pizza.title}</h2>
-				<p>{pizza.info}</p>
-		</div>
+				<p><b>СОСТАВ: </b><br/> {pizza.info}</p>
+				<br/>
+				Сделайте заказ и получите
+				бонусные баллы 🟢
+				<br/>
+				<br/>
+		        </div>
+		</div>	
 	)
 }
 
