@@ -9,20 +9,24 @@
   background: rgba(0, 0, 0, 0.8);
   z-index: 9999;
   div {
-    width: 400px;
+    width: 550px;
     position: relative;
-    margin: 2% auto;
+    margin: 8% auto;
     padding: 20px 20px;
     background: #fff;
-    border-radius: 9px;
+    border-radius: 15px;
 
     img {
-      width: 320px;
-      margin-left: 23px;
+      width: 400px;
+      margin-left: -20px;
+      margin-right: -55px;
+      margin-top: 25px;
     }
 
     p {
-      font-weight: 300;
+      padding-top: 10px;
+      font-size: 19px;
+      font-weight: 400;
     }
   }
 }
