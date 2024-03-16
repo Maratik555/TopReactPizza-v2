@@ -5,7 +5,7 @@
   background-color: $orange;
   border-radius: 20px;
   padding: 8px 15px;
-  min-width: 100px;
+  min-width: 150px;
   font-size: 18px;
   text-align: center;
   cursor: pointer;
@@ -134,7 +134,9 @@
     display: flex;
     align-items: center;
     line-height: 20px;
-    padding: 7px 15px;
+    margin-right: 80px;
+    max-width: 150px;
+    min-width: 170px;
 
     svg {
       margin-right: 8px;
