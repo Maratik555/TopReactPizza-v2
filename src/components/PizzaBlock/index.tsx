@@ -128,7 +128,7 @@ export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price
 						</button>
 					}
 				</div>
-				{show && <ShowPopup addedCount={addedCount} pizza={fullItem} onClickAdd={onClickAdd} onShow={onShow}/>
+				{show && <ShowPopup pizza={fullItem} onShow={onShow}/>
 				}
 			</div>
 		</div>
