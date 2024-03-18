@@ -25,7 +25,6 @@ export const sortList: SortItem[] = [
 
 export const Sort: FC<SortPopupProps> = memo(({value}) => {
     const [open, setOpen] = useState(false)
-    const sortRef = useRef<HTMLDivElement>(null)
     const dispatch = useDispatch()
 
     const onClickListItem = (obj: SortItem) => {
