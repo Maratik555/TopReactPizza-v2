@@ -77,7 +77,7 @@ export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, count
                 </button>
             </div>
             <div className="cart__item-price">
-                <b>{size === 26 ? price * count : size === 30 ? price1 * count : price2 * count} ₽</b>
+               <b>{price * count} ₽</b>
             </div>
             <div className="cart__item-remove">
                 <div onClick={onClickRemove} className="button button--outline button--circle">
