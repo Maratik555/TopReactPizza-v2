@@ -13,13 +13,11 @@ interface PizzaBlockProps {
 	info: string
 	imageUrl: string
 	price: number
-	price1: number
-	price2: number
 	types: number[]
 	sizes: number[]
 }
 
-export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price, price1, price2, types, sizes}) => {
+export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price, types, sizes}) => {
 	
 	
 	const dispatch = useDispatch()
@@ -30,6 +28,7 @@ export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price
 	let [fullItem, setFullItem] = React.useState({imageUrl, title, price, info})
 
 	const addedCount = cartItem ? cartItem.count : 0
+	const addPrice = cartItem ? cartItem.price : price
 
 	const onShow = ({...item}) => {
 		// @ts-ignore
@@ -45,8 +44,6 @@ export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price
 			info,
 			title,
 			price,
-			price1,
-			price2,
 			imageUrl,
 			type: typeNames[activeType],
 			size: sizes[activeSize],
@@ -87,7 +84,7 @@ export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price
 					</ul>
 				</div>
 				<div className="pizza-block__bottom">
-						<div className="pizza-block__price">{activeSize === 0 ? ` ${price} ₽` : activeSize === 1 ? ` ${price1} ₽` : ` ${price2} ₽`}</div>
+						<div className="pizza-block__price">{addedCount > 1 ? addPrice * addedCount + '₽' : addPrice + '₽'}</div>
 					{addedCount > 0 ? <>
 						<button className="button button--outline button--circle cart__item-count-minus" onClick={cartMinus}
 						>
@@ -128,7 +125,7 @@ export const PizzaBlock:FC<PizzaBlockProps> = ({id, title, info, imageUrl, price
 						</button>
 					}
 				</div>
-				{show && <ShowPopup addedCount={addedCount} pizza={fullItem} onClickAdd={onClickAdd} onShow={onShow}/>
+				{show && <ShowPopup pizza={fullItem} onShow={onShow}/>
 				}
 			</div>
 		</div>
