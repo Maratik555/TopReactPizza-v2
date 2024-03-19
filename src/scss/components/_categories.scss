@@ -4,6 +4,7 @@
   ul {
     display: flex;
 
+
     li {
       background-color: #f9f9f9;
       padding: 10px 20px;
@@ -26,6 +27,39 @@
         background-color: #282828;
         color: #fff;
       }
+    }
+  }
+}
+
+ @media (max-width: 930px) {
+   .categories {
+     ul {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 10px;
+     }
+   }
+ }
+
+@media (max-width: 597px) {
+  .categories {
+    ul {
+      margin-right: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3px;
+    }
+  }
+}
+
+@media (max-width: 455px) {
+  .categories {
+    ul {
+      margin-right: 10px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 4px;
+      margin-top: 20px;
     }
   }
 }

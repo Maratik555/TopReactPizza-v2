@@ -1,13 +1,17 @@
 import React from 'react'
-import {AiFillGithub} from 'react-icons/ai'
-import {FaVk} from "react-icons/fa"
+import { SiApplepay } from "react-icons/si";
+import { SiBitcoin } from "react-icons/si";
+import { SiWebmoney } from "react-icons/si";
 
 const Footer = () => {
   return (
-      <footer style={{marginLeft: 120, paddingBottom: 40}}>
-        <p style={{fontSize: 19, color: 'rgba(0, 0, 0, 0.8)'}}>Copyright &copy; 2022 Marat, Inc. All rights reserved.
-        <span style={{marginLeft: 150}}><a href="https://github.com/Maratik555" target='_blank' rel="noreferrer"><AiFillGithub className='footer'/></a></span>
-        <span><a href="https://vk.com/marat_99999" target='_blank' rel="noreferrer"><FaVk className='footer'/></a></span></p>
+      <footer>
+          <div className='footer'>
+              <SiApplepay size={40} style={{cursor: 'pointer'}}/>
+              <SiBitcoin size={40} style={{cursor: 'pointer'}}/>
+              <SiWebmoney size={40} style={{cursor: 'pointer'}}/>
+          </div>
+          <p className='footer_p'>Copyright &copy; 2023 Marat, Inc. All rights reserved.</p>
       </footer>
   )
 }

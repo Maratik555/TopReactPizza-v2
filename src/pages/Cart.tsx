@@ -18,8 +18,11 @@ const Cart = () => {
 		if (window.confirm('Очистить корзину?')) dispatch(clearItems())
 	}
 	
-	if (!totalPrice) return <CartEmpty/>
-	
+	if (totalPrice <= 0) {
+		return <CartEmpty/>
+	}
+
+
 	return (
 		<div className="container container--cart">
 			<div className="cart">
@@ -74,9 +77,7 @@ const Cart = () => {
 					</div>
 				</div>
 				<div className="content__items">
-					{items.map(item  => (
-						<CartItem key={item.id} {...item}/>
-					))}
+					{items.map(item  => <CartItem key={item.id} {...item}/>)}
 				</div>
 				<div className="cart__bottom">
 					<div className="cart__bottom-details">

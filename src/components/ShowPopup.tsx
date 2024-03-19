@@ -2,13 +2,11 @@ import React from 'react'
 import {IoCloseCircleOutline} from 'react-icons/io5'
 
 type PropsType = {
-	addedCount: number
 	onShow: (arg0: object) => void
-	onClickAdd: () => void
-	pizza: {imageUrl: string, title: string, info: string, price: number}
+	pizza: {imageUrl: string, title: string, info: string}
 }
 
-const ShowPopup = ({pizza, onShow, onClickAdd, addedCount}: PropsType) => {
+const ShowPopup = ({pizza, onShow}: PropsType) => {
 	
 	return (
 		<div className='fullItem'>
@@ -16,15 +14,12 @@ const ShowPopup = ({pizza, onShow, onClickAdd, addedCount}: PropsType) => {
 				<IoCloseCircleOutline className="close-popup" onClick={() => onShow(pizza)}/>
 				<img src={pizza.imageUrl}  alt='pizza'/>
 				<h2>{pizza.title}</h2>
-				<p>{pizza.info}</p>
+				<p><b>СОСТАВ: </b><br/> {pizza.info}</p>
 				<br/>
-				<h3>{pizza.price} ₽</h3>
+				Сделайте заказ и получите
+				бонусные баллы 🟢
 				<br/>
-					<button className="button button--outline button--add"
-					        onClick={onClickAdd}>
-						<span>В корзину</span>
-						{addedCount > 0 && <i>{addedCount}</i>}
-					</button>
+				<br/>
 			</div>
 		</div>
 	)

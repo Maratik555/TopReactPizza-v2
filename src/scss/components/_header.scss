@@ -16,21 +16,16 @@
     padding-top: 10px;
     background: #ffdf8c;
 
-    @media (max-width: 645px) {
-      //flex-direction: column;
-
-      .header__cart {
-        margin-top: 10px;
-      }
-      .header__login {
-        display: none;
-        margin-left: 15px;
-      }
-      .button {
-        padding: 5px 5px;
-        margin-left: 5px;
-      }
+    @media (max-width: 1070px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding-right: 45px;
     }
+    // @media (max-width: 775px) {
+    //  flex-direction: column;
+    //}
   }
 
   &__logo {

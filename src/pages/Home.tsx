@@ -20,13 +20,10 @@ const Home = () => {
     const {items, status} = useSelector(selectPizzaData)
     const {categoryId, sort, currentPage, searchValue} = useSelector(selectFilter)
 
-    const onChangeCategory = React.useCallback((idx: number) => {
-        dispatch(setCategoryId(idx))
-    }, [])
+    const onChangeCategory = React.useCallback((idx: number) => dispatch(setCategoryId(idx))
+    , [])
 
-    const onChangePage = (page: number) => {
-        dispatch(setCurrentPage(page))
-    }
+    const onChangePage = (page: number) => dispatch(setCurrentPage(page))
 
     const getPizzas = async () => {
         const sortBy = sort.sortProperty.replace('-', '')
@@ -83,7 +80,7 @@ const Home = () => {
         isMounted.current = true
     }, [])
 
-    const pizzas = items.map(obj => <PizzaBlock key={obj.id} {...obj} />)
+    const pizzas = items.map(obj => <PizzaBlock key={obj.id} {...obj}/>)
     const skeletons = [...new Array(6)].map((_, index) => <LoadingBlock key={index}/>)
 
     return (

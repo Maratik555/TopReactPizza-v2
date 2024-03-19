@@ -14,9 +14,7 @@ export function Header() {
   const [modal, setModal] = useState(false)
   const [user, setUser] = useState('')
 
-  function userS() {
-    setModal(true)
-  }
+  const userS = () => setModal(true)
 
   function userO() {
     alert('Вы вышли...')
@@ -45,7 +43,7 @@ export function Header() {
         <div className="header__cart">
           {location.pathname !== '/cart' && (
             <Link title='Корзина' to="/cart" className="button button--cart">
-              <span>{totalPrice} ₽</span>
+              <span>{totalPrice}₽</span>
               <div className="button__delimiter"/>
               <svg
                 width="18"

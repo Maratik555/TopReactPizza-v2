@@ -37,6 +37,14 @@
     padding: 10px 0;
     max-width: 160px;
 
+     @media (max-width: 1300px) {
+       .sort {
+         margin-top: 20px;
+       }
+       position: relative;
+       max-width: 500px;
+     }
+
     ul {
       overflow: hidden;
       li {

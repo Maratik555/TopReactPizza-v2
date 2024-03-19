@@ -10,16 +10,14 @@ export type CartItemProps = {
     title: string
     type: string
     size: number
-    price: number
     price1: number
     price2: number
     count: number
     imageUrl: string
 }
 
-export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, price1, price2, count, imageUrl}) => {
+export const CartItem: FC<CartItemProps> = ({id, title, type, size, price1, price2, count, imageUrl}) => {
     const dispatch = useDispatch()
-
     const onClickPlus = () => dispatch(addItem({id, size, type} as CartItemType))
 
     const onClickMinus = () => dispatch(minusItem(id))
@@ -59,7 +57,7 @@ export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, price
                             fill="#EB5A1E"/>
                     </svg>
                 </button>
-                <b>{count}</b>
+                <b className='b'>{count}</b>
                 <button
                     onClick={onClickPlus}
                     className="button button--outline button--circle cart__item-count-plus">
@@ -79,7 +77,7 @@ export const CartItem: FC<CartItemProps> = ({id, title, type, size, price, price
                 </button>
             </div>
             <div className="cart__item-price">
-                <b>{size === 26 ? price * count : size === 30 ? price1 * count : price2 * count} ₽</b>
+                <b>{size === 30 ? price1 * count : price2 * count}</b>
             </div>
             <div className="cart__item-remove">
                 <div onClick={onClickRemove} className="button button--outline button--circle">

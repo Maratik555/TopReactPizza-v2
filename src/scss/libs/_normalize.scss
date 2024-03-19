@@ -38,6 +38,9 @@ h2 {
   font-weight: 600;
   font-size: 28px;
   line-height: 30px;
+    @media (max-width: 700px) {
+      font-size: 23px;
+    }
 }
 
 a {
