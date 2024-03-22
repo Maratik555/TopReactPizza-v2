@@ -434,9 +434,10 @@ body {
      gap: 20px;
 }
   .wrapper .cart__item-count {
-    display: grid;
-    justify-items: center;
-    gap: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-left: -10px;
   }
   .wrapper .cart__item-price {
     display: grid;
