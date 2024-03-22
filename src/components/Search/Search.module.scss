@@ -4,7 +4,7 @@
 }
 
 .input {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #fe5f1e;
   padding: 10px 20px;
   padding-left: 45px;
   width: 200px;
@@ -13,7 +13,8 @@
   font-size: 17px;
 
   &:focus {
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    border: 1px dashed #fe5f1e;
+    color: black;
   }
 }
 
