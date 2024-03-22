@@ -3,8 +3,8 @@ import { SiApplepay } from "react-icons/si";
 import { SiBitcoin } from "react-icons/si";
 import { SiWebmoney } from "react-icons/si";
 
-import appStore from "./../assets/app.png"
-import google from "./../assets/google.png"
+import appStore from "../assets/img/app.png"
+import google from "../assets/img/google.png"
 
 const Footer = () => {
   return (
