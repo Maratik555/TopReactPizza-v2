@@ -35,15 +35,15 @@
 button {
   color: #fe5f1e;
   margin-left: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   font-weight: bold;
   padding: 8px 25px;
   text-align: center;
   font-size: 18px ;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 1px solid #fe5f1e;
   transition: background-color 0.2s ease-in-out;
-  background-color: #f9f9f9;
+  background-color: white;
 }
 
 button:disabled {
@@ -51,7 +51,7 @@ button:disabled {
 }
 
 button:hover {
-   background-color: #fe5f1e;
+  background-color: #fe5f1e;
   color: white;
 }
 
