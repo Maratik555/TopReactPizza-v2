@@ -30,7 +30,7 @@ export function Header() {
             <img width="40" src={logoSvg} alt="Pizza logo"/>
             <div>
               <h2>TopReactPizza</h2>
-              <p>Самая вкусная пицца в мире! 🍕</p>
+              <p>Самая вкусная пицца в мире🍕</p>
             </div>
           </div>
         </Link>
