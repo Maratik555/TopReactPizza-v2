@@ -2,7 +2,6 @@ import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-
 import {CartItem} from '../components'
 import {selectCart} from '../redux/cart/selectors'
 import {CartEmpty} from '../components'
@@ -10,18 +9,12 @@ import {clearItems} from '../redux/cart/cartSlice'
 
 const Cart = () => {
 	const dispatch = useDispatch()
-	const {items, totalPrice} = useSelector(selectCart)
+	const {items, totalPrice} = useSelector(selectCart);
 	
-	const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0)
+	const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
+	const onClickClear = () => window.confirm('Очистить корзину?') ? dispatch(clearItems()) : null
 	
-	const onClickClear = () => {
-		if (window.confirm('Очистить корзину?')) dispatch(clearItems())
-	}
-	
-	if (totalPrice <= 0) {
-		return <CartEmpty/>
-	}
-
+	if (totalPrice <= 0) return <CartEmpty/>;
 
 	return (
 		<div className="container container--cart">
@@ -106,7 +99,7 @@ const Cart = () => {
 							<span>Вернуться назад</span>
 						</Link>
 						<div className="button pay-btn">
-							<span onClick={() => alert('Ваш заказ успешно оплачен! 🎁')}>Оплатить сейчас</span>
+							<span onClick={() => alert('Спасибо! Ваш заказ успешно оплачен! 🎁')}>Оплатить сейчас</span>
 						</div>
 					</div>
 				</div>

@@ -8,10 +8,9 @@ import MainLayout from './layout/MainLayout'
 
 // export const SearchContext = React.createContext()
 
-const Cart = lazy(() => import(/* webpackChunkName: "Cart" */ "./pages/Cart"))
+const Cart = lazy(() => import(/* webpackChunkName: "Cart" */ "./pages/Cart"));
 
 function App() {
-  // const [search, setSearch] = React.useState('')
   return (
     <>
       <div className="wrapper">
@@ -19,7 +18,7 @@ function App() {
           <div className="content">
             <Routes>
               <Route path="/" element={<MainLayout />}>
-                <Route path="" element={<Home />} />
+                <Route path="" element={<Home/>} />
                 <Route path="cart" element={<Suspense fallback={<div>Идёт загрузка корзины...</div>}>
                     <Cart/>
                 </Suspense>} />

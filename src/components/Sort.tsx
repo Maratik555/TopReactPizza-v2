@@ -1,4 +1,4 @@
-import React, {FC, memo, useState} from 'react'
+import React, {memo, useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {setSort} from '../redux/filter/filterSlice'
 import {Sort as SortType, SortPropertyEnum} from '../redux/filter/types'
@@ -20,17 +20,17 @@ export const sortList: SortItem[] = [
     { name: 'цене (ASC)', sortProperty: SortPropertyEnum.PRICE_ASC },
     { name: 'алфавиту (DESC)', sortProperty: SortPropertyEnum.TITLE_DESC },
     { name: 'алфавиту (ASC)', sortProperty: SortPropertyEnum.TITLE_ASC }
-]
+];
 
-export const Sort: FC<SortPopupProps> = memo(({value}) => {
-    const [open, setOpen] = useState(false)
-    const dispatch = useDispatch()
+export const Sort = memo(({value}: SortPopupProps) => {
+    const [open, setOpen] = useState(false);
+    const dispatch = useDispatch();
 
 
     const onClickListItem = (obj: SortItem) => {
-        dispatch(setSort(obj))
+        dispatch(setSort(obj));
         setOpen(false)
-    }
+    };
 
     return (
         <div className="sort">
@@ -66,4 +66,4 @@ export const Sort: FC<SortPopupProps> = memo(({value}) => {
             )}
         </div>
     )
-})
+});

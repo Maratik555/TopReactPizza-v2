@@ -21,4 +21,4 @@ export const CartEmpty = () => {
 				</Link>
 			</div>
 	)
-}
+};

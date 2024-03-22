@@ -1,11 +1,14 @@
 $orange: #fe5f1e;
 
 .root {
-  padding: 90px;
+  padding: 290px;
   text-align: center;
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 900px;
 
+  h1 {
+    padding-bottom: 40px;
+  }
 
   button {
     padding: 10px;
@@ -24,5 +27,4 @@ $orange: #fe5f1e;
     background-color: darken($orange, 8%);
     transform: scale(1.1);
   }
-
 }

@@ -3,11 +3,10 @@ import './signIn.css'
 
 const SignIn = ({active, setActive, setUser}: any) => {
 
-    const [value, setValue] = useState('')
-    const [value2, setValue2] = useState('')
+    const [value, setValue] = useState('');
+    const [value2, setValue2] = useState('');
     function welcome() {
-        setUser(value)
-        // alert('Welcome site TopReactPizza!')
+        setUser(value);
         setActive(false)
     }
 
@@ -26,6 +25,6 @@ const SignIn = ({active, setActive, setUser}: any) => {
             </div>
         </div>
     )
-}
+};
 
 export default SignIn

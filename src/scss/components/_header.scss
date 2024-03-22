@@ -1,27 +1,26 @@
 @import '../variables';
 
 .header {
-  border-bottom: 1px solid $gray-line;
+  //border-bottom: 1px solid $gray-line;
   padding: 20px 0;
 
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     position:fixed;
     z-index: 101;
     top: 0;
     padding-right: 33px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
     background: #ffdf8c;
 
     @media (max-width: 1070px) {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding-right: 45px;
+      //justify-content: center;
+      gap: 15px;
     }
     // @media (max-width: 775px) {
     //  flex-direction: column;

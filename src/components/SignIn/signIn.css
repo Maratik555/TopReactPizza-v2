@@ -33,13 +33,13 @@
 }
 
 button {
-  color: #232323FF;
+  color: #fe5f1e;
   margin-left: 20px;
-  border-radius: 13px;
+  border-radius: 20px;
   font-weight: bold;
-  padding: 10px 20px;
-  min-width: 100px;
+  padding: 8px 25px;
   text-align: center;
+  font-size: 18px ;
   cursor: pointer;
   border: 1px solid transparent;
   transition: background-color 0.2s ease-in-out;
@@ -51,7 +51,8 @@ button:disabled {
 }
 
 button:hover {
-   background-color: rgba(169, 169, 169, 0.4);
+   background-color: #fe5f1e;
+  color: white;
 }
 
 input {

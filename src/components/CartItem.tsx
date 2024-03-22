@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React from 'react'
 import {useDispatch} from 'react-redux'
 import {addItem, minusItem, removeItem} from '../redux/cart/cartSlice'
 
@@ -16,17 +16,24 @@ export type CartItemProps = {
     imageUrl: string
 }
 
-export const CartItem: FC<CartItemProps> = ({id, title, type, size, price1, price2, count, imageUrl}) => {
-    const dispatch = useDispatch()
-    const onClickPlus = () => dispatch(addItem({id, size, type} as CartItemType))
+export const CartItem = ({id, title, type, size, price1, price2, count, imageUrl}: CartItemProps) => {
+    const dispatch = useDispatch();
+    const onClickPlus = () => dispatch(addItem({id, size, type} as CartItemType));
 
-    const onClickMinus = () => dispatch(minusItem(id))
+    const onClickMinus = () => {
+      if(count > 1) {
+          dispatch(minusItem(id))
+      }
+     else if(window.confirm('Ты действительно хочешь удалить товар?')) {
+           dispatch(removeItem(id))
+      }
+    };
 
     const onClickRemove = () => {
         if (window.confirm('Ты действительно хочешь удалить товар?')) {
             dispatch(removeItem(id))
         }
-    }
+    };
 
     return (
         <div className="cart__item">
@@ -39,7 +46,7 @@ export const CartItem: FC<CartItemProps> = ({id, title, type, size, price1, pric
             </div>
             <div className="cart__item-count">
                 <button
-                    disabled={count === 1}
+                    // disabled={count === 1}
                     onClick={onClickMinus}
                     className="button button--outline button--circle cart__item-count-minus"
                 >
@@ -57,7 +64,7 @@ export const CartItem: FC<CartItemProps> = ({id, title, type, size, price1, pric
                             fill="#EB5A1E"/>
                     </svg>
                 </button>
-                <b className='b'>{count}</b>
+                <b style={{marginLeft: 20}}>{count}</b>
                 <button
                     onClick={onClickPlus}
                     className="button button--outline button--circle cart__item-count-plus">
@@ -98,4 +105,4 @@ export const CartItem: FC<CartItemProps> = ({id, title, type, size, price1, pric
             </div>
         </div>
     )
-}
+};

@@ -7,17 +7,17 @@ import SignIn from './SignIn'
 import {selectCart} from '../redux/cart/selectors'
 
 export function Header() {
-  const {totalPrice, items} = useSelector(selectCart)
-  const location = useLocation()
+  const {totalPrice, items} = useSelector(selectCart);
+  const location = useLocation();
   
-  const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0)
-  const [modal, setModal] = useState(false)
-  const [user, setUser] = useState('')
+  const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
+  const [modal, setModal] = useState(false);
+  const [user, setUser] = useState('');
 
-  const userS = () => setModal(true)
+  const userS = () => setModal(true);
 
   function userO() {
-    alert('Вы вышли...')
+    alert('Вы вышли...');
     setUser('')
   }
 
@@ -27,18 +27,20 @@ export function Header() {
       <div className="container">
         <Link to="/">
           <div className="header__logo">
-            <img width="38" src={logoSvg} alt="Pizza logo"/>
+            <img width="40" src={logoSvg} alt="Pizza logo"/>
             <div>
               <h2>TopReactPizza</h2>
-              <p>Самая вкусная пицца в мире</p>
+              <p>Самая вкусная пицца в мире! 🍕</p>
             </div>
           </div>
         </Link>
         {location.pathname !== '/cart' && <Search />}
+
         {!user && <button onClick={userS} title="Войти">Войти</button>}
 
         {user && <button onClick={userO} title="Выйти">Выйти</button>}
-        <span style={{fontWeight: 600, fontSize: 17}}>{user}</span>
+
+        <span style={{fontWeight: 700, fontSize: 18, color: '#fe5f1e'}}><i>{user}</i></span>
         <SignIn active={modal} setActive={setModal} setUser={setUser}/>
         <div className="header__cart">
           {location.pathname !== '/cart' && (

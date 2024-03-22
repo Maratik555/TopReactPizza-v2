@@ -7,22 +7,21 @@ type PropsType = {
 }
 
 const ShowPopup = ({pizza, onShow}: PropsType) => {
-	
+
 	return (
 		<div className='fullItem'>
 			<div>
 				<IoCloseCircleOutline className="close-popup" onClick={() => onShow(pizza)}/>
-				<img src={pizza.imageUrl}  alt='pizza'/>
+				<img src={pizza.imageUrl} alt='pizza'/>
 				<h2>{pizza.title}</h2>
-				<p><b>СОСТАВ: </b><br/> {pizza.info}</p>
+				<p>{pizza.info}</p>
 				<br/>
 				Сделайте заказ и получите
 				бонусные баллы 🟢
-				<br/>
-				<br/>
+				<br/><br/>
 			</div>
 		</div>
 	)
-}
+};
 
 export default ShowPopup

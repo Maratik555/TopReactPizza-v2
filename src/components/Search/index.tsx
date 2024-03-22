@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React from 'react'
 import s from './Search.module.scss'
 import {useDispatch} from 'react-redux'
 import debounce from 'lodash.debounce'
@@ -7,31 +7,29 @@ import {useCallback} from 'react'
 // import {SearchContext} from '../../App'
 
 
-const Search: FC = () => {
-  // const {search,setSearch} = React.useContext(SearchContext)
-  
+const Search = () => {
   
   const dispatch = useDispatch()
-  const [value, setValue] = React.useState('')
-  const inputRef = React.useRef<HTMLInputElement>(null)
+  const [value, setValue] = React.useState('');
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const onClickClear = () => {
-    dispatch(setSearchValue(''))
-    setValue('')
+    dispatch(setSearchValue(''));
+    setValue('');
     inputRef.current?.focus()
-  }
+  };
 
   const updateSearchValue = useCallback(
     debounce((str: string) => {
       dispatch(setSearchValue(str))
     }, 250),
     [],
-  )
+  );
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
     updateSearchValue(event.target.value)
-  }
+  };
 
   return (
     <div className={s.root}>
@@ -87,6 +85,6 @@ const Search: FC = () => {
       )}
     </div>
   )
-}
+};
 
 export default Search
