@@ -16,12 +16,12 @@
     padding-top: 15px;
     background: #ffdf8c;
 
-   
-     @media (max-width: 1070px) {
+    @media (max-width: 1070px) {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
       gap: 10px;
+    }
   }
 
   &__logo {
